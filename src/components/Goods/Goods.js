@@ -4,7 +4,9 @@ import {connect} from 'react-redux';
 
 const mapStateToProps = (state) => {
     return {
-        state: state.store.filter(item => item.brand.includes())
+        state: state.filter.length > 0 ? state.store.filter(item => {
+            return state.filter.indexOf(item.brand) != -1
+        }) : state.store
     }
 }
 

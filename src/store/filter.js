@@ -1,4 +1,4 @@
-const inicialState = ["apple"];
+const inicialState = [];
 
 const filter = (state = inicialState, action) => {
 
