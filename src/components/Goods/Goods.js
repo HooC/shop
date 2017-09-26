@@ -2,11 +2,12 @@ import React, {Component} from 'react';
 import ItemProduct from './ItemProduct';
 import {connect} from 'react-redux';
 
+
 const mapStateToProps = (state) => {
     return {
         state: state.filter.length > 0 ? state.store.filter(item => {
             return state.filter.indexOf(item.brand) != -1
-        }) : state.store
+        }).filter(item => item.name.toLowerCase().includes(state.search.join().toLowerCase())) : state.store.filter(item => item.name.toLowerCase().includes(state.search.join().toLowerCase()))
     }
 }
 

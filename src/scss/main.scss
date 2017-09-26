@@ -6,6 +6,7 @@ body {
 .wrapper {
     display: grid;
     grid-template-columns: 20% 1fr;
+    clear: both;
 }
 
 .sidebar {
@@ -162,11 +163,82 @@ body {
 
     tr {
         &:nth-child(even) {
-            background: #eee;
+            // background: #eee;
         }
     }
     td {
         padding: 10px;
         border: 1px solid #ccc;
     }
+
+    &__img {
+        max-width: 100px;
+        max-height: 100px;
+    }
+
+    &__delete {
+        color: red;
+        text-decoration: none;
+        font-weight: bold;
+    }
+}
+
+.menu {
+    margin: 0 0 20px;
+    padding: 0;
+
+    &__item {
+        display: inline-block;
+        list-style: none;
+        font-size: 20px;
+        margin: 0 1px 0 0;
+    }
+
+    &__link {
+        color: white;
+        background: $blue;
+        display: block;
+        text-decoration: none;
+        padding: 10px 20px;
+        text-align: center;
+        
+    }
+}
+
+.small-basket{
+    width: calc(20% - 20px);
+    height: 100px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 18px;
+    margin: 0 20px 20px 0;
+    float: left;
+
+    &__icon {
+        width: 30px;
+        margin: 31px 0 0 10px;
+        float: left;
+    }
+
+    &__text {
+        font-size: 18px;
+        float: left;
+        margin: 36px 0 0 20px;
+    }
+
+    &__link {
+        color: $blue;
+    }
+}
+
+.search {
+    float: left;
+    width: 79%;
+    box-sizing: border-box;
+    height: 40px;
+    border-radius: 3px;
+    box-shadow: none;
+    text-indent: 10px;
+    font-size: 18px;
+    border: 1px solid #ccc;
 }

@@ -24,9 +24,6 @@ class Item extends Component {
         this.props.onChangeCatalog(this.input.value);
     }
 
-    componentDidMount() {
-        console.log(this.props.data, this.props.state.join(' '), this.props.state.join().includes(this.props.data) )
-    }
     render() {
         return(
 
