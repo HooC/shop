@@ -8,15 +8,17 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 class ItemProduct extends Component {
-    // constructor(props){
-    //     super(props);
-    // }
 
     render(){
+        const srcImage = require(`../../images/${this.props.item.img}.jpg`);
+
         return (
-            <div>
-                <h1>{this.props.item.name}</h1>
-                {this.props.item.price}
+            <div className="product">
+                <h1 className="product__title">{this.props.item.name}</h1>
+                <p className="product__img"><img src={srcImage} /></p>
+                <p className="product__price">{this.props.item.price}</p>
+
+                <button className="product__but">Buy</button>
             </div>
         )
     }

@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 const mapStateToProps = (state) => {
     return {
-        state: state.brands
+        state: state.filter  
     }
 }
 
@@ -24,12 +24,15 @@ class Item extends Component {
         this.props.onChangeCatalog(this.input.value);
     }
 
+    componentDidMount() {
+        console.log(this.props.data, this.props.state.join(' '), this.props.state.join().includes(this.props.data) )
+    }
     render() {
         return(
 
                 <li>
                     <label onChange={this.filterBrand.bind(this)}>
-                        <input ref={e => this.input = e} type="checkbox" className="checkbox__input" value={this.props.data} />
+                        <input ref={e => this.input = e} type="checkbox" defaultChecked={this.props.state.join().includes(this.props.data)} className="checkbox__input" value={this.props.data} />
                         <span className="checkbox"></span>
                         {this.props.data}
                     </label>

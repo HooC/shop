@@ -28,13 +28,23 @@ body {
         grid-template-columns: auto auto auto auto ;
     }
 
+    &__title {
+        a {
+            color: $blue;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
     &__img {
         height: 200px;
         overflow: hidden;
 
         img {
             max-width: 100%;
-            height: 100%;
+            max-height: 100%;
         }
     }
 
@@ -113,5 +123,50 @@ body {
                 }
             }
         }
+    }
+}
+
+.product{
+
+    &__img {
+        width: 300px;
+        height: 300px;
+        overflow: hidden;
+        border: 1px solid #ccc;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &__price {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    &__but {
+        @extend .product-item__button;
+        float: left;
+    }
+}
+
+.basket-table{
+    width: 100%;
+    border-collapse: collapse;
+
+    thead {
+        background: #ccc;
+        text-transform: uppercase;
+        font-size: 18px;
+    }
+
+    tr {
+        &:nth-child(even) {
+            background: #eee;
+        }
+    }
+    td {
+        padding: 10px;
+        border: 1px solid #ccc;
     }
 }

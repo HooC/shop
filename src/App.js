@@ -9,7 +9,7 @@ class App extends Component {
         return (
            
             <div>
-                <h1>Shop on React / Redux</h1>
+                
 
                 <div className="wrapper">
 
