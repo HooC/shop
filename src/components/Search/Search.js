@@ -10,6 +10,12 @@ const mapActionToProps = (dispatch) => {
                 type: 'ADD_SEARCH',
                 payload: value
             })
+        },
+
+        clearSearch: () => {
+            dispatch({
+                type: 'CLEAR_SEARCH'
+            })
         }
     }
 }
@@ -17,6 +23,9 @@ const mapActionToProps = (dispatch) => {
 class Search extends Component {
     changeValue() {   
         this.props.searchValue(this.elem.value)
+    }
+    componentWillUnmount() {
+        this.props.clearSearch();
     }
 
     render() {

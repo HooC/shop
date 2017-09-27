@@ -5,7 +5,10 @@ const search = (state = inicialState, action) => {
         case('ADD_SEARCH') :
         // console.log()
             return [action.payload];
-    }
+        
+        case('CLEAR_SEARCH') :
+            return []
+    } 
     return state;
 }
 
